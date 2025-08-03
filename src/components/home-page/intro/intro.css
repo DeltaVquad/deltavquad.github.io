@@ -1,0 +1,175 @@
+/* src/components/Intro/Intro.css */
+
+.intro-section {
+  background-color: #ffffff;
+  padding: 100px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.intro-left {
+  flex: 1;
+  max-width: 450px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+/* --- ESTILO DA BARRA ATUALIZADO COM TRANSIÇÕES RÍGIDAS --- */
+.pernambuco-bar {
+  width: 5px;
+  height: 200px;
+  
+  border-radius: 4px;
+  /* Define que o vermelho vai de 0% a 33.3%, o amarelo de 33.3% a 66.6%, 
+    e o verde começa em 66.6% até o final.
+  */
+  background: linear-gradient(
+    to bottom,
+    #d52b1e 0% 33.3%,
+    #f9dd16 33.3% 66.6%,
+    #009639 66.6% 100%
+  );
+}
+
+.intro-text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.intro-right {
+  flex: 2;
+  max-width: 600px;
+}
+
+.intro-title {
+  font-family: 'Sansation', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00205b;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.intro-subtitle {
+  font-family: 'Sansation', sans-serif;
+  color: #5f6c7b;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.intro-description {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* --- ESTILOS DO BOTÃO ANIMADO (sem alteração) --- */
+.intro-button {
+  background-color: #00205b;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease-out;
+}
+
+.intro-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00102A; 
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 1; 
+}
+
+.intro-button:hover::before {
+  transform: translateX(0);
+}
+
+.button-text,
+.button-icon {
+  transition: transform 0.3s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+.button-icon {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+.intro-button:hover .button-text {
+  transform: translateX(-5px);
+}
+
+.intro-button:hover .button-icon {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 900px) {
+  .intro-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-left {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 15px;
+  }
+  
+  /* Gradiente horizontal com transições rígidas */
+  .pernambuco-bar {
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(
+      to right,
+      #d52b1e 0% 33.3%,
+      #f9dd16 33.3% 66.6%,
+      #009639 66.6% 100%
+    );
+  }
+
+  .intro-text-content {
+    align-items: center;
+  }
+
+  .intro-description {
+    text-align: justify;
+  }
+}

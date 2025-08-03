@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Sansation', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #00102A;
+}
+
+
+.content-section {
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.content-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.content-section p {
+  font-size: 1.1em;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.content-section.alternate {
+  background-color: #ffffff;
+}
+
+/* Adicione este código ao final do seu arquivo src/App.css */
+
+/* --- ESTILOS DA TELA DE CARREGAMENTO --- */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #00102A; /* Cor de fundo do seu tema */
+}
+
+.loading-logo {
+  width: 100px;
+  height: 100px;
+  /* Animação de pulsação */
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}

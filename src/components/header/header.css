@@ -1,0 +1,162 @@
+/* /src/components/Header/Header.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(0, 21, 74, 0.8), transparent);
+  transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.header.scrolled {
+  background-color: #00102A; 
+  padding: 10px 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  height: 80px;
+  display: block;
+  transition: height 0.3s ease-in-out;
+}
+
+.header.scrolled .logo {
+  height: 50px;
+}
+
+.nav-container {
+  display: flex;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-links a:hover::after,
+.nav-links a.animate::after {
+  transform: scaleX(1);
+}
+
+.menu-icon {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+/* --- CORREÇÃO DOS ÍCONES --- */
+.icon-wrapper {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.icon-wrapper.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.icon-wrapper.hidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none; /* Garante que o ícone oculto não seja clicável */
+}
+
+@media (max-width: 1100px) {
+  .header {
+    padding: 15px 25px;
+  }
+  
+  .header.scrolled {
+    padding: 10px 25px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .header.scrolled .logo {
+    height: 40px;
+  }
+
+  .menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 16, 42, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .nav-container.aberto {
+    transform: translateX(0);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .nav-links a {
+    font-size: 1.5em;
+  }
+}

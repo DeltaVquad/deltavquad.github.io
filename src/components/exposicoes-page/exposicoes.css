@@ -1,0 +1,164 @@
+/* src/components/exposicoes-page/exposicoes.css */
+
+.exposicoes-section {
+  padding: 160px 50px 80px 50px;
+  background-color: #ffffff;
+  color: #00205b;
+  font-family: 'Sansation', sans-serif;
+  min-height: 100vh;
+}
+
+.exposicoes-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.exposicoes-header {
+  margin-bottom: 50px;
+}
+
+.exposicoes-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #00205b;
+  line-height: 1.1;
+}
+
+.exposicoes-subtitle {
+  font-size: 1.2rem;
+  color: #5f6c7b;
+  margin: 15px auto 0 auto;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.visitas-grid {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* --- REGRA MODIFICADA --- */
+.visita-card {
+  background-color: #f8f9fa;
+  /* border: 1px solid #e9ecef; -- Linha removida */
+  box-shadow: 0 4px 12px rgba(0, 21, 74, 0.2); /* Sombra adicionada */
+  border-radius: 8px;
+  padding: 30px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionada transição para a sombra */
+}
+
+/* Efeito de hover para levantar o card */
+.visita-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 21, 74, 0.3);
+}
+
+
+.visita-local {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00205b;
+  margin-bottom: 15px;
+}
+
+.visita-descricao {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.fotos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.visita-foto {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.foto-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5f6c7b;
+  font-style: italic;
+}
+
+.exposicoes-cta {
+  background-color: #00102A;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.exposicoes-cta h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.exposicoes-cta p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  text-decoration: none;
+  border: none;
+  padding: 15px 35px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease-out;
+  z-index: 1;
+  background-color: #ffffff;
+  color: #00205b;
+}
+
+.cta-button .button-text {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e0eaff;
+  transform: translateX(-101%);
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.cta-button:hover::before {
+  transform: translateX(0);
+}
+
+@media (max-width: 900px) {
+  .exposicoes-section {
+    padding: 120px 25px 60px 25px;
+  }
+}

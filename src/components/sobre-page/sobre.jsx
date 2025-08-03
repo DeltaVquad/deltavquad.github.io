@@ -1,0 +1,89 @@
+// src/components/sobre-page/sobre.jsx
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './sobre.css';
+import { handleAnimationAndAction } from '../utils/animation-handler';
+
+// IMAGENS
+import teamImage from '../../assets/sobre-page/sobre.jpg';
+import fluxogramaImage from '../../assets/sobre-page/fluxograma.png';
+
+// --- FOTOS DOS MEMBROS (EXEMPLOS) ---
+import angel from '../../assets/sobre-page/membros/angel.png';
+import george from '../../assets/sobre-page/membros/george.png';
+
+const teamMembers = [
+  { name: 'Carolyne Almeida', role: 'Capitã', photo: null },
+  { name: 'George Azevedo', role: 'Orientador/Coordenador', photo: george },
+  { name: 'Eliton Sena', role: 'Líder Operacional\nLíder de Sensores & Navegação', photo: null },
+  { name: 'Luís Arthur', role: 'Líder de Aerodesign', photo: null },
+  { name: 'Ana Beatriz', role: 'Líder de Visão Computacional', photo: null },
+  { name: 'Gilvan Ramos', role: 'Líder de Sistemas Embarcados', photo: null },
+  { name: 'Pedro Gabriel', role: 'Líder de Controle', photo: null },
+  { name: 'João Pedro', role: 'Membro de Aerodesign', photo: null },
+  { name: 'Angel Ayala', role: 'Membro de Controle', photo: angel },
+];
+
+const Sobre = () => {
+  const navigate = useNavigate();
+
+  const handleProjectsClick = (e) => {
+    handleAnimationAndAction(e, () => navigate('/projetos'));
+  };
+
+  return (
+    <section className="sobre-section">
+      <div className="sobre-container">
+        <div className="sobre-intro-grid">
+          <div className="sobre-text-content">
+            <h1 className="sobre-title">NOSSA HISTÓRIA</h1>
+            <p className="sobre-description">
+              A Delta V - Drones é um projeto de extensão universitária pela Universidade de Pernambuco. Formada por estudantes de
+              graduação em Engenharia, o principal desafio é o desenvolvimento de soluções de ponta para drones autônomos, visando a
+              inovação e o aprendizado prático no campo da robótica e inteligência artificial.
+            </p>
+            <p className="sobre-description">
+              Acreditamos no poder da colaboração para transformar teoria em realidade e inspirar a próxima geração de engenheiros e cientistas. A equipe conta com pessoas apaixonadas por tecnologia e multidisciplinaridade.
+            </p>
+          </div>
+          <div className="sobre-image-wrapper">
+            <img src={teamImage} alt="Equipe DeltaV" className="sobre-image" />
+          </div>
+        </div>
+        <div id="estrutura" className="team-structure-section">
+          <h2 className="structure-title">ESTRUTURA DA EQUIPE</h2>
+            <div className="flowchart-container">
+              <img src={fluxogramaImage} alt="Fluxograma da equipe DeltaV" className="flowchart-image" />
+            </div>
+        </div>
+        <div className="team-members-section">
+            <h2 className="members-title">CONHEÇA NOSSOS MEMBROS</h2>
+            <div className="members-grid">
+                {teamMembers.map((member, index) => (
+                    <div key={index} className="member-card">
+                        {member.photo ? (
+                          <img src={member.photo} alt={`Foto de ${member.name}`} className="member-photo" />
+                        ) : (
+                          <div className="member-photo-placeholder"></div>
+                        )}
+                        <h3 className="member-name">{member.name}</h3>
+                        <div className="member-role">
+                          {member.role.split('\n').map((line, i, arr) => (
+                            <React.Fragment key={i}>
+                              {line}
+                              {i < arr.length - 1 && <br />}
+                            </React.Fragment>
+                          ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default Sobre;

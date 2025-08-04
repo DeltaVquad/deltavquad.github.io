@@ -53,7 +53,6 @@
         line-height: 1.6;
       }
       
-      /* Botão estilizado para redirecionar ou aguardar */
       .redirect-message {
         font-size: 1.2rem;
         font-weight: bold;
@@ -78,10 +77,21 @@
       }
     </style>
     <script>
-      // Script de redirecionamento do SPA
-      var path = window.location.pathname;
-      var base = path.substring(0, path.lastIndexOf('/') + 1);
-      window.location.replace(base + 'index.html' + path);
+      // Script de redirecionamento corrigido para evitar loops
+      (function() {
+        var path = window.location.pathname;
+
+        // Se o caminho já contém index.html, significa que o loop já começou.
+        // Neste caso, redirecionamos para a página inicial para quebrar o ciclo.
+        if (path.includes('/index.html')) {
+          window.location.replace('/');
+          return;
+        }
+
+        // Caso contrário, redirecionamos para o index.html com o caminho original,
+        // permitindo que o React Router assuma o controle.
+        window.location.replace(location.origin + '/index.html' + path);
+      })();
     </script>
   </head>
   <body>
@@ -92,4 +102,4 @@
       <div class="redirect-message">Redirecionando...</div>
     </div>
   </body>
-</html> 
+</html>

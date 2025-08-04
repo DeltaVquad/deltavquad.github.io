@@ -1,7 +1,7 @@
 // src/components/Homepage/Hero/Hero.jsx
 
 import React from 'react';
-import bgImage from '../../../assets/home-page/banner.jpg'; 
+import bgImage from '../../../assets/home-page/banner.webp'; 
 import './Hero.css';
 import { handleAnimationAndAction } from '../../utils/animation-handler';
 

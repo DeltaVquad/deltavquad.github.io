@@ -6,13 +6,14 @@ import './competicoes.css';
 import { handleAnimationAndAction } from '../utils/animation-handler';
 
 // Importando imagens
-import imgSAE20251 from '../../assets/competicoes-page/eletroquad2025/SAE1.jpg';
-import imgSAE20252 from '../../assets/competicoes-page/eletroquad2025/SAE2.jpg';
-import imgSAE20253 from '../../assets/competicoes-page/eletroquad2025/SAE3.jpg';
-import imgSAE20254 from '../../assets/competicoes-page/eletroquad2025/SAE4.jpg';
-import imgSAE20255 from '../../assets/competicoes-page/eletroquad2025/SAE5.jpg';
-import imgSAE20256 from '../../assets/competicoes-page/eletroquad2025/SAE6.jpg';
-import imgSuspense from '../../assets/competicoes-page/suspense.jpg';
+import imgSAE20251 from '../../assets/competicoes-page/eletroquad2025/SAE1.webp';
+import imgSAE20252 from '../../assets/competicoes-page/eletroquad2025/SAE2.webp';
+import imgSAE20253 from '../../assets/competicoes-page/eletroquad2025/SAE3.webp';
+import imgSAE20254 from '../../assets/competicoes-page/eletroquad2025/SAE4.webp';
+import imgSAE20255 from '../../assets/competicoes-page/eletroquad2025/SAE5.webp';
+import imgSAE20256 from '../../assets/competicoes-page/eletroquad2025/SAE6.webp';
+import imgSAE20257 from '../../assets/competicoes-page/eletroquad2025/SAE7.webp';
+import imgSuspense from '../../assets/competicoes-page/suspense.webp';
 
 const competicoes = [
   {
@@ -20,7 +21,7 @@ const competicoes = [
     ano: "2025",
     descricao: "Em 2025, marcamos presença na Eletroquad SAE Brasil, a principal competição nacional de drones autônomos. Representando Pernambuco e a POLI-UPE, levamos nosso projeto à prova com orgulho e espírito inovador. A participação foi uma oportunidade de validar nossas soluções em um ambiente técnico desafiador, além de fortalecer nosso compromisso com a engenharia, a pesquisa aplicada e o trabalho em equipe.",
     colocacao: ["6º Lugar Nacional", "1º Lugar Apresentação Oral", "2º Lugar Relatório Técnico"],
-    imagens: [imgSAE20251, imgSAE20252, imgSAE20253, imgSAE20254, imgSAE20255, imgSAE20256],
+    imagens: [imgSAE20251, imgSAE20252, imgSAE20253, imgSAE20254, imgSAE20255, imgSAE20256, imgSAE20257],
   },
   {
     nome: "Eletroquad SAE Brasil 2026",

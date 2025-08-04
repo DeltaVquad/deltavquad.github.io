@@ -6,8 +6,8 @@ import './projetos.css';
 import { handleAnimationAndAction } from '../utils/animation-handler';
 
 // Importando imagens placeholder
-import imgLogan from '../../assets/projetos-page/logan.png';
-import imgKwid from '../../assets/projetos-page/suspense.jpg';
+import imgLogan from '../../assets/projetos-page/logan.webp';
+import imgKwid from '../../assets/projetos-page/suspense.webp';
 
 const projetos = [
   {

@@ -6,12 +6,12 @@ import './exposicoes.css';
 import { handleAnimationAndAction } from '../utils/animation-handler';
 
 // Importando as imagens placeholder
-import fotoETEPAM1 from '../../assets/exposicoes-page/ETEPAM/ete1.jpg';
-import fotoETEPAM2 from '../../assets/exposicoes-page/ETEPAM/ete2.jpg';
-import fotoETEPAM3 from '../../assets/exposicoes-page/ETEPAM/ete3.jpg';
-import fotoIFPE1 from '../../assets/exposicoes-page/IFPE/ifpe1.jpg';
-import fotoIFPE2 from '../../assets/exposicoes-page/IFPE/ifpe2.jpg';
-import fotoIFPE3 from '../../assets/exposicoes-page/IFPE/ifpe3.jpg';
+import fotoETEPAM1 from '../../assets/exposicoes-page/ETEPAM/ete1.webp';
+import fotoETEPAM2 from '../../assets/exposicoes-page/ETEPAM/ete2.webp';
+import fotoETEPAM3 from '../../assets/exposicoes-page/ETEPAM/ete3.webp';
+import fotoIFPE1 from '../../assets/exposicoes-page/IFPE/ifpe1.webp';
+import fotoIFPE2 from '../../assets/exposicoes-page/IFPE/ifpe2.webp';
+import fotoIFPE3 from '../../assets/exposicoes-page/IFPE/ifpe3.webp';
 
 
 const Exposicoes = () => {

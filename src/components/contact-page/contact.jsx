@@ -31,11 +31,11 @@ const Contact = () => {
         setStatus('Mensagem enviada com sucesso!');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus('Ocorreu um erro ao enviar. Tente novamente mais tarde.');
+        setStatus('Ocorreu um erro ao enviar. Tente manualmente via email.');
       }
     } catch (error) {
       console.error('Erro de rede:', error);
-      setStatus('Ocorreu um erro ao enviar. Tente novamente mais tarde.');
+      setStatus('Ocorreu um erro ao enviar. Tente manualmente via email.');
     }
   };
   

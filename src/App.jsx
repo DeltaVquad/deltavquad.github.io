@@ -1,13 +1,13 @@
-// src/App.jsx
-
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
-// Componentes
 import Header from './components/header/header.jsx';
 import Footer from './components/footer/footer.jsx';
 import ScrollToTop from './components/utils/scroll-to-top.jsx';
 import ComingSoon from './components/utils/coming-soon/coming-soon.jsx';
+import Popup from './components/utils/popup/popup.jsx';
+
+import { setupGoogleAnalytics } from './components/utils/analytics.jsx';
 
 // Páginas
 import Home from './Home';
@@ -18,61 +18,52 @@ import Projetos from './components/projetos-page/projetos.jsx';
 import Competicoes from './components/competicoes-page/competicoes.jsx';
 import Sobre from './components/sobre-page/sobre.jsx';
 
-// --- ARQUIVOS DE ESTILO E LOGO ---
 import './App.css';
-import logoIcon from './assets/logos/icon.png'; // Importando a sua logo
+import logoIcon from './assets/logos/icon.webp';
 
-// Serviço para buscar a hora da API (sem alterações)
-const timeService = {
-  getCurrentDateTime: async () => {
-    try {
-      const response = await fetch('https://worldtimeapi.org/api/timezone/America/Sao_Paulo');
-      if (!response.ok) throw new Error(`API Error: ${response.statusText}`);
-      const data = await response.json();
-      return data.datetime;
-    } catch (error) {
-      console.error("Falha ao buscar a data/hora do servidor.", error);
-      return null;
-    }
-  }
-};
+import useLaunchTimer from './components/utils/timer.jsx';
+
+const isPopupEnabled = true;
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isLaunched, setIsLaunched] = useState(false);
-  const [initialSeconds, setInitialSeconds] = useState(null);
+  const targetLaunchDate = '2025-08-04T16:04:00';
+  
+  const [showPopup, setShowPopup] = useState(false);
+  const location = useLocation();
 
-  const targetLaunchDate = '2025-08-03T01:29:40-03:00';
-
-  const handleLaunch = () => {
-    setIsLaunched(true);
-  };
-
+  // 1. Carrega o script do Analytics apenas uma vez
   useEffect(() => {
-    const checkLaunchStatus = async () => {
-      const currentServerDateTimeString = await timeService.getCurrentDateTime();
-      if (currentServerDateTimeString) {
-        const now = new Date(currentServerDateTimeString);
-        const launch = new Date(targetLaunchDate);
-        const diffMs = launch.getTime() - now.getTime();
-
-        if (diffMs > 0) {
-          setIsLaunched(false);
-          setInitialSeconds(Math.floor(diffMs / 1000));
-        } else {
-          setIsLaunched(true);
-        }
-      } else {
-        setIsLaunched(false);
-        setInitialSeconds(null);
-      }
-      setIsLoading(false);
-    };
-
-    checkLaunchStatus();
+    setupGoogleAnalytics();
   }, []);
 
-  // --- TELA DE CARREGAMENTO ATUALIZADA ---
+  // 2. Envia um evento de 'pageview' a cada mudança de rota
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_path: location.pathname + location.search,
+      });
+    }
+  }, [location.pathname, location.search]);
+  
+  const handleLaunch = () => {
+    if (!isPopupEnabled || location.pathname !== '/') {
+      return; 
+    }
+
+    const lastClosedTime = localStorage.getItem('lastPopupClosedTime');
+    const fiveMinutesInMs = 5 * 60 * 1000;
+    if (!lastClosedTime || (Date.now() - parseInt(lastClosedTime, 10) > fiveMinutesInMs)) {
+      setTimeout(() => setShowPopup(true), 1000);
+    }
+  };
+
+  const { isLoading, isLaunched, initialSeconds } = useLaunchTimer(targetLaunchDate, handleLaunch);
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    localStorage.setItem('lastPopupClosedTime', Date.now().toString());
+  };
+
   if (isLoading) {
     return (
       <div className="loading-container">
@@ -86,31 +77,36 @@ function App() {
       <ComingSoon
         initialSeconds={initialSeconds}
         targetLaunchDate={targetLaunchDate}
-        onLaunch={handleLaunch}
+        onLaunch={() => {}}
       />
     );
   }
 
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="App">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/contato" element={<Contact />} />
-            <Route path="/seletivo" element={<Seletivo />} />
-            <Route path="/exposicoes" element={<Exposicoes />} />
-            <Route path="/projetos" element={<Projetos />} />
-            <Route path="/competicoes" element={<Competicoes />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <div className="App">
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/contato" element={<Contact />} />
+          <Route path="/seletivo" element={<Seletivo />} />
+          <Route path="/exposicoes" element={<Exposicoes />} />
+          <Route path="/projetos" element={<Projetos />} />
+          <Route path="/competicoes" element={<Competicoes />} />
+        </Routes>
+      </main>
+      <Footer />
+      {showPopup && <Popup onClose={handleClosePopup} />}
+    </div>
   );
 }
 
-export default App;
+const AppWrapper = () => (
+  <Router>
+    <ScrollToTop />
+    <App />
+  </Router>
+);
+
+export default AppWrapper;

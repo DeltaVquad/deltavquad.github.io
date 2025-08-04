@@ -15,16 +15,15 @@ const secondsToDhms = (totalSeconds) => {
   return { dias, horas, minutos, segundos };
 };
 
-// O componente agora aceita a propriedade "onLaunch"
 const ComingSoon = ({ initialSeconds, targetLaunchDate, onLaunch }) => {
   const [secondsLeft, setSecondsLeft] = useState(initialSeconds);
   
   useEffect(() => {
     if (secondsLeft === null) return;
 
-    // Se a contagem chegar a zero, chama a função onLaunch
+    // Se a contagem chegar a zero, a página recarrega automaticamente
     if (secondsLeft <= 0) {
-      onLaunch(); // <-- AQUI A MÁGICA ACONTECE
+      window.location.reload();
       return;
     }
 
@@ -62,8 +61,8 @@ const ComingSoon = ({ initialSeconds, targetLaunchDate, onLaunch }) => {
         <h1 className="coming-soon-title">...</h1>
         <div className="countdown-timer">
           {initialSeconds === null 
-            ? <span>atualize a página.</span>
-            : (secondsLeft > 0 ? timerComponents : <span>atualize a página.</span>)
+            ? <span>API Error</span>
+            : (secondsLeft > 0 ? timerComponents : <span>atualizando...</span>)
           }
         </div>
       </div>

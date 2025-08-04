@@ -5,12 +5,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Blocks.css';
 import { handleAnimationAndAction } from '../../utils/animation-handler';
 
-import imagemQuemSomos from '../../../assets/home-page/sobre.jpg';
-import imagemCompeticoes from '../../../assets/home-page/competicoes.jpg';
-import imagemExposicoes from '../../../assets/home-page/exposicoes.jpg';
-import imagemProjetos from '../../../assets/home-page/projetos.jpg';
-import imagemSeletivo from '../../../assets/home-page/seletivo.jpg';
-import imagemContato from '../../../assets/home-page/contato.jpg';
+import imagemQuemSomos from '../../../assets/home-page/sobre.webp';
+import imagemCompeticoes from '../../../assets/home-page/competicoes.webp';
+import imagemExposicoes from '../../../assets/home-page/exposicoes.webp';
+import imagemProjetos from '../../../assets/home-page/projetos.webp';
+import imagemSeletivo from '../../../assets/home-page/seletivo.webp';
+import imagemContato from '../../../assets/home-page/contato.webp';
 
 const blockData = [
   { title: 'Quem somos', link: '/sobre', isInternal: false, image: imagemQuemSomos },

@@ -6,9 +6,9 @@ import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 import './Footer.css';
 
 // --- LOGOS ---
-import logoDeltaV from '../../assets/logos/iconbranco.png';
-import logoUPE from '../../assets/logos/upe.png';
-import logoPOLI from '../../assets/logos/poli.png';
+import logoDeltaV from '../../assets/logos/iconbranco.webp';
+import logoUPE from '../../assets/logos/upe.webp';
+import logoPOLI from '../../assets/logos/poli.webp';
 
 const Footer = () => {
   return (
@@ -18,6 +18,8 @@ const Footer = () => {
         <div className="footer-column">
           <h4 className="footer-title">Navegação</h4>
           <ul className="footer-links">
+            {/* NOVO: Adicionado o botão "Início" */}
+            <li><Link to="/">Início</Link></li>
             <li><Link to="/sobre">Quem Somos</Link></li>
             <li><Link to="/competicoes">Competições</Link></li>
             <li><Link to="/exposicoes">Exposições</Link></li>

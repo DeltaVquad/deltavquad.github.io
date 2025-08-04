@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { handleAnimationAndAction } from '../utils/animation-handler';
 import './header.css';
-import logoDeltaV from '../../assets/logos/logo.png';
+import logoDeltaV from '../../assets/logos/logo.webp';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Header = () => {

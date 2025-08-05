@@ -106,6 +106,21 @@
   pointer-events: none; /* Garante que o ícone oculto não seja clicável */
 }
 
+.home-link-item {
+  margin-left: 0; /* Remove a margem para o primeiro item */
+  margin-right: 30px;
+}
+.home-link-item .home-text {
+  display: none; /* Esconde o texto no desktop */
+}
+.home-link-item .home-icon {
+  font-size: 1.5em; /* Ajuste o tamanho do ícone */
+  transition: color 0.3s ease;
+}
+.home-link-item .home-icon:hover {
+  color: #aeb9c7;
+}
+
 @media (max-width: 1100px) {
   .header {
     padding: 15px 25px;
@@ -159,4 +174,15 @@
   .nav-links a {
     font-size: 1.5em;
   }
+
+  .home-link-item {
+    margin: 20px 0; /* Centraliza no menu mobile */
+  }
+  .home-link-item .home-text {
+    display: block; /* Garante que o texto seja visível no menu mobile */
+  }
+  .home-link-item .home-icon {
+    display: none; /* Esconde o ícone no menu mobile */
+  }
 }
+

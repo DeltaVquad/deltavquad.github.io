@@ -1,8 +1,5 @@
-// src/utils/timer.jsx
-
 import { useState, useEffect } from 'react';
 
-// URL da sua Vercel Function para obter a hora do servidor
 const VERCEL_API_URL = 'https://time-seven-ruddy.vercel.app/api/getServerTime';
 
 const timeService = {

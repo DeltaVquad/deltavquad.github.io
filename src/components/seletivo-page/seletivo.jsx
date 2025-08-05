@@ -6,8 +6,8 @@ import { handleAnimationAndAction } from '../utils/animation-handler';
 import { useNavigate } from 'react-router-dom';
 
 const seletivo = () => {
-  const inscriptionLink = "https://forms.google.com"; // Link de Inscrição (Placeholder)
-  const editalLink = "https://docs.google.com";       // Link do Edital (Placeholder)
+  const inscriptionLink = "https://forms.gle/2bmosPNKtzEshQQS9"; // Link de Inscrição (Placeholder)
+  const editalLink = "https://drive.google.com/file/d/1OH65NQcs6KkRVW5O_A9kRWkT2cSM5wxO/view?usp=sharing";       // Link do Edital (Placeholder)
   const navigate = useNavigate();
 
   const handleInscriptionClick = (e) => {

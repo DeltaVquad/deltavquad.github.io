@@ -157,7 +157,7 @@
   transform: translateX(0);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .exposicoes-section {
     padding: 120px 25px 60px 25px;
   }

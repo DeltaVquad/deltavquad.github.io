@@ -1,15 +1,11 @@
-// src/components/sobre-page/sobre.jsx
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './sobre.css';
 import { handleAnimationAndAction } from '../utils/animation-handler';
-
-// IMAGENS
 import teamImage from '../../assets/sobre-page/sobre.webp';
 import fluxogramaImage from '../../assets/sobre-page/fluxograma.webp';
 
-// --- FOTOS DOS MEMBROS (EXEMPLOS) ---
+// Foto dos membros
 import angel from '../../assets/sobre-page/membros/angel.webp';
 import george from '../../assets/sobre-page/membros/george.webp';
 import carol from '../../assets/sobre-page/membros/carol.webp';
@@ -21,15 +17,15 @@ import pedro from '../../assets/sobre-page/membros/pedro.webp';
 import jp from '../../assets/sobre-page/membros/jp.webp';
 
 const teamMembers = [
-  { name: 'Carolyne Almeida', role: 'Capitã', photo: carol },
   { name: 'George Azevedo', role: 'Orientador/Coordenador', photo: george },
   { name: 'Angel Ayala', role: 'Conselheiro', photo: angel },
+  { name: 'Carolyne Almeida', role: 'Capitã', photo: carol },
   { name: 'Eliton Sena', role: 'Líder Operacional\nLíder de Sensores & Navegação', photo: eliton },
-  { name: 'Luís Arthur', role: 'Líder de Aerodesign', photo: arthur },
   { name: 'Ana Beatriz', role: 'Líder de Visão Computacional', photo: benny },
+  { name: 'Pedro Gabriel', role: 'Líder de Controle & Simulação', photo: pedro },
+  { name: 'Luiz Arthur', role: 'Líder de Estruturas & Desempenho', photo: arthur },
   { name: 'Gilvan Ramos', role: 'Líder de Sistemas Embarcados', photo: gilvan },
-  { name: 'Pedro Gabriel', role: 'Líder de Controle', photo: pedro },
-  { name: 'João Pedro', role: 'Membro de Aerodesign', photo: jp },
+  { name: 'João Pedro', role: 'Membro de Estruturas & Desempenho', photo: jp },
 ];
 
 const Sobre = () => {

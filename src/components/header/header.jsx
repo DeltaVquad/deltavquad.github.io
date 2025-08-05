@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { handleAnimationAndAction } from '../utils/animation-handler';
 import './header.css';
 import logoDeltaV from '../../assets/logos/logo.webp';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome } from 'react-icons/fa';
 
 const Header = () => {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -64,13 +64,18 @@ const Header = () => {
 
       <nav id="nav-links-mobile" className={`nav-container ${menuAberto ? 'aberto' : ''}`}>
         <ul className="nav-links">
-          {/* O LINK "QUEM SOMOS" AGORA APONTA PARA A NOVA PÁGINA */}
           <li><Link to="/sobre" onClick={(e) => handleLinkClick(e, '/sobre', true)}>Quem Somos</Link></li>
           <li><Link to="/competicoes" onClick={(e) => handleLinkClick(e, '/competicoes', true)}>Competições</Link></li>
           <li><Link to="/exposicoes" onClick={(e) => handleLinkClick(e, '/exposicoes', true)}>Exposições</Link></li>
           <li><Link to="/projetos" onClick={(e) => handleLinkClick(e, '/projetos', true)}>Projetos</Link></li>
           <li><Link to="/seletivo" onClick={(e) => handleLinkClick(e, '/seletivo', true)}>Processo Seletivo</Link></li>
           <li><Link to="/contato" onClick={(e) => handleLinkClick(e, '/contato', true)}>Contato</Link></li>
+          <li className="home-link-item">
+            <Link to="/" onClick={(e) => handleLinkClick(e, '/', true)}>
+              <FaHome aria-label="Início" className="home-icon" />
+              <span className="home-text">Início</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

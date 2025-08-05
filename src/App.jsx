@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { setupGoogleAnalytics } from './components/utils/analytics.jsx';
 
 import Header from './components/header/header.jsx';
 import Footer from './components/footer/footer.jsx';
 import ScrollToTop from './components/utils/scroll-to-top.jsx';
 import ComingSoon from './components/utils/coming-soon/coming-soon.jsx';
 import Popup from './components/utils/popup/popup.jsx';
+import useLaunchTimer from './components/utils/timer.jsx';
+import logoIcon from './assets/logos/icon.webp';
+import './App.css';
 
-import { setupGoogleAnalytics } from './components/utils/analytics.jsx';
 
-// Páginas
 import Home from './Home';
 import Contact from './components/contact-page/contact.jsx';
 import Seletivo from './components/seletivo-page/seletivo.jsx';
@@ -18,25 +20,19 @@ import Projetos from './components/projetos-page/projetos.jsx';
 import Competicoes from './components/competicoes-page/competicoes.jsx';
 import Sobre from './components/sobre-page/sobre.jsx';
 
-import './App.css';
-import logoIcon from './assets/logos/icon.webp';
-
-import useLaunchTimer from './components/utils/timer.jsx';
-
 const isPopupEnabled = true;
 
 function App() {
-  const targetLaunchDate = '2025-08-04T16:04:00';
+  // Data de lançamento do site IMPORTANTE!!!!!
+  const targetLaunchDate = '2025-08-04T18:10:00';
   
   const [showPopup, setShowPopup] = useState(false);
   const location = useLocation();
 
-  // 1. Carrega o script do Analytics apenas uma vez
   useEffect(() => {
     setupGoogleAnalytics();
   }, []);
 
-  // 2. Envia um evento de 'pageview' a cada mudança de rota
   useEffect(() => {
     if (window.gtag) {
       window.gtag('event', 'page_view', {

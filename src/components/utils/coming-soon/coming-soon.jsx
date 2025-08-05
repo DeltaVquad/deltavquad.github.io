@@ -1,5 +1,3 @@
-// src/components/utils/coming-soon/coming-soon.jsx
-
 import React, { useState, useEffect } from 'react';
 import './coming-soon.css';
 
@@ -21,7 +19,6 @@ const ComingSoon = ({ initialSeconds, targetLaunchDate, onLaunch }) => {
   useEffect(() => {
     if (secondsLeft === null) return;
 
-    // Se a contagem chegar a zero, a página recarrega automaticamente
     if (secondsLeft <= 0) {
       window.location.reload();
       return;
@@ -32,10 +29,8 @@ const ComingSoon = ({ initialSeconds, targetLaunchDate, onLaunch }) => {
     }, 1000);
 
     return () => clearInterval(interval);
-    // Adicionamos 'secondsLeft' e 'onLaunch' ao array de dependências
   }, [secondsLeft, onLaunch]);
 
-  // Lógica de exibição da data (sem alterações)
   let launchDateString = "Carregando...";
   if (targetLaunchDate) {
     const launchDate = new Date(targetLaunchDate);

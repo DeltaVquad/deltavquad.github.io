@@ -13,13 +13,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #00102A; /* Cor de fundo do seu tema */
+  background-color: #00102A; 
 }
 
 .loading-logo {
   width: 100px;
   height: 100px;
-  /* Animação de pulsação */
   animation: pulse 2s infinite ease-in-out;
 }
 

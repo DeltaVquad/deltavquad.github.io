@@ -1,8 +1,6 @@
-/* src/components/projetos-page/projetos.css */
-
 .projetos-section {
   padding: 160px 50px 80px 50px;
-  background-color: #f8f9fa; /* Fundo levemente acinzentado */
+  background-color: #f8f9fa;
   color: #00205b;
   font-family: 'Sansation', sans-serif;
   min-height: 100vh;
@@ -33,6 +31,14 @@
   line-height: 1.6;
 }
 
+.projeto-subtitulo {
+  font-size: 1.3rem;
+  color: #5f6c7b;
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
 .projetos-list {
   display: flex;
   flex-direction: column;
@@ -57,7 +63,6 @@
     box-shadow: 0 8px 20px rgba(0, 21, 74, 0.3);
 }
 
-/* Alterna a ordem da imagem e do texto */
 .projeto-card:nth-child(even) .projeto-imagem-wrapper {
   order: 2;
 }
@@ -91,6 +96,7 @@
   line-height: 1.7;
   color: #333;
   margin-bottom: 25px;
+  text-align: justify;
 }
 
 .projeto-tecnologias {
@@ -137,6 +143,6 @@
     grid-template-columns: 1fr;
   }
   .projeto-card:nth-child(even) .projeto-imagem-wrapper {
-    order: 0; /* Reseta a ordem no mobile */
+    order: 0;
   }
 }

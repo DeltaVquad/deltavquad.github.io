@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Página inicial -->
+  <url>
+    <loc>https://deltavquad.github.io</loc>
+    <lastmod>2025-08-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Sobre -->
+  <url>
+    <loc>https://deltavquad.github.io/sobre</loc>
+    <lastmod>2025-08-10T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Competições -->
+  <url>
+    <loc>https://deltavquad.github.io/competicoes</loc>
+    <lastmod>2025-08-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Exposições -->
+  <url>
+    <loc>https://deltavquad.github.io/exposicoes</loc>
+    <lastmod>2025-08-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projetos -->
+  <url>
+    <loc>https://deltavquad.github.io/projetos</loc>
+    <lastmod>2025-08-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Seletivo -->
+  <url>
+    <loc>https://deltavquad.github.io/seletivo</loc>
+    <lastmod>2025-08-10T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contato -->
+  <url>
+    <loc>https://deltavquad.github.io/contato</loc>
+    <lastmod>2025-08-10T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

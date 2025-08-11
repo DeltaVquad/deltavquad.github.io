@@ -3,7 +3,7 @@
 
   <!-- Página inicial -->
   <url>
-    <loc>https://deltavquad.github.io</loc>
+    <loc>https://deltavquad.github.io/</loc>
     <lastmod>2025-08-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- Sobre -->
   <url>
-    <loc>https://deltavquad.github.io/sobre</loc>
+    <loc>https://deltavquad.github.io/sobre/</loc>
     <lastmod>2025-08-10T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
@@ -19,7 +19,7 @@
 
   <!-- Competições -->
   <url>
-    <loc>https://deltavquad.github.io/competicoes</loc>
+    <loc>https://deltavquad.github.io/competicoes/</loc>
     <lastmod>2025-08-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -27,7 +27,7 @@
 
   <!-- Exposições -->
   <url>
-    <loc>https://deltavquad.github.io/exposicoes</loc>
+    <loc>https://deltavquad.github.io/exposicoes/</loc>
     <lastmod>2025-08-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -35,7 +35,7 @@
 
   <!-- Projetos -->
   <url>
-    <loc>https://deltavquad.github.io/projetos</loc>
+    <loc>https://deltavquad.github.io/projetos/</loc>
     <lastmod>2025-08-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -43,7 +43,7 @@
 
   <!-- Seletivo -->
   <url>
-    <loc>https://deltavquad.github.io/seletivo</loc>
+    <loc>https://deltavquad.github.io/seletivo/</loc>
     <lastmod>2025-08-10T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -51,7 +51,7 @@
 
   <!-- Contato -->
   <url>
-    <loc>https://deltavquad.github.io/contato</loc>
+    <loc>https://deltavquad.github.io/contato/</loc>
     <lastmod>2025-08-10T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
